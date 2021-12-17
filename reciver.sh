@@ -1,7 +1,8 @@
 #! /bin/bash
 
 TOKEN="$1"
-TIMEOUT="$2"
+CHAT="$2"
+TIMEOUT="$3"
 
 while true; do
     while read -r update; do
@@ -15,6 +16,8 @@ while true; do
             else
                 echo "$new_id $date" >> ./list && \
                     echo "Done"
+                 curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" -d chat_id=$CHAT -d text="Щаз забаню!"
+
             fi
         elif [ $button != null ]; then
             echo -n "Button was pressed, "
