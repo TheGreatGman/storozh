@@ -1,3 +1,5 @@
+TOKEN="$1"
+CHAT="$2"
 while read -r word1 word2 ; do
 difference=$(($(date +%s) - $word2))
     if $(($difference > 60))
