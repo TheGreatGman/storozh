@@ -1,7 +1,7 @@
 #! /bin/bash
 
-TOKEN=""
-CHAT=""
+TOKEN="$1"
+CHAT="$2"
 TIMEOUT="5"
 
 cd "$(dirname "$(realpath "$0")")"
