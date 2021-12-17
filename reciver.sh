@@ -1,7 +1,7 @@
 #! /bin/bash
 
 TOKEN="$1"
-CHAT="$2"
+TIMEOUT="$2"
 
 while true; do
     while read -r update; do
@@ -10,7 +10,6 @@ while true; do
             echo "Done"
         if   [ $new_id != null ]; then
             echo -n "Found new user, adding to list..."
-            # Adding new user
             if grep -q "$new_id" ./list; then
                 echo "Skipped."
             else
@@ -19,7 +18,7 @@ while true; do
             fi
         elif [ $button != null ]; then
             echo -n "Button was pressed, "
-            # check if it's a correct button
+            # TODO check if it's a correct button
             if grep -q "$from" ./list; then
                 echo -n " correct user. Removing from the list..."
                 sed -i "/$from/d" && \
