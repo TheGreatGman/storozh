@@ -4,4 +4,4 @@ difference=$((($date +%s) - $word2))
      then
      $curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" -d chat_id=$chat -d user_id=$word1 -d revoke_messages=True
      fi
-done < pwd/list
+done < ./list
